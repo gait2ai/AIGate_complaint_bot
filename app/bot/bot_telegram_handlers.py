@@ -6,6 +6,7 @@ This module handles all Telegram-specific interactions and conversation flows,
 ensuring a configurable and maintainable approach to user interactions.
 """
 
+import sys
 import logging
 from typing import Dict, Any
 
