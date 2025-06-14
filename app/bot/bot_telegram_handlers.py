@@ -45,7 +45,7 @@ from app.bot.institution_bot_logic import InstitutionBot, ComplaintData # Ensure
     # Suggestion and Feedback Flow States (simplified for now)
     COLLECTING_SUGGESTION_TEXT,
     COLLECTING_FEEDBACK_TEXT
-) = range(16) # Adjusted range for new states
+) = range(15) # Adjusted range for new states
 
 # Logger for this module
 logger = logging.getLogger(__name__)
