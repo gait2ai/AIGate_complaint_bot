@@ -21,7 +21,7 @@ from enum import Enum
 from abc import ABC, abstractmethod
 import hashlib
 import re
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 logger = logging.getLogger(__name__)
 
