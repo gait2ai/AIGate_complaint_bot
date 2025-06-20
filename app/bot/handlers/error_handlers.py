@@ -76,7 +76,7 @@ async def _notify_user_of_error(update: Optional[object], context: ContextTypes.
             
         # Get the bot instance from application context
         bot_instance = None
-        if (hasattr(context, 'application') and hasattr(context.application, 'bot_data'):
+        if hasattr(context, 'application') and hasattr(context.application, 'bot_data'):
             bot_instance = context.application.bot_data.get('bot_instance')
         
         # Determine user's preferred language
