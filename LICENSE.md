@@ -2,7 +2,7 @@
             Software License Agreement
 ================================================================
 
-Copyright (c) 2024 AI Gate for Artificial Intelligence Applications
+Copyright (c) 2025 AI Gate for Artificial Intelligence Applications
 
 This software is available under a dual-license model. Your use of this software is subject to the terms of the license that applies to your use case.
 
