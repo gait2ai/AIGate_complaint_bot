@@ -2,7 +2,7 @@
             Software License Agreement
 ================================================================
 
-Copyright (c) 2024 Abu Amr Al-Dubsi
+Copyright (c) 2024 AI Gate for Artificial Intelligence Applications
 
 This software is available under a dual-license model. Your use of this software is subject to the terms of the license that applies to your use case.
 
@@ -40,7 +40,7 @@ A "commercial purpose" includes, but is not limited to:
 If you wish to use this software for commercial purposes, please contact the owner to discuss terms and purchase a commercial license.
 
 - **Name:** Abu Amr Al-Dubsi
-- **Email:** abuamr.dubsi@gmail.com
+- **Email:** abuamr.dubai@gmail.com
 - **Phone:** +967 777 265 965
 
 ----------------------------------------------------------------
