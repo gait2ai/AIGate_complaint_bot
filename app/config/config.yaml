@@ -114,7 +114,7 @@ critical_complaint_config:
 # Email Notification Configuration
 # ------------------------------------------
 # NOTE: Sensitive credentials (sender_email, sender_password) are loaded from the .env file.
-email:
+email_config:
   smtp_server: "smtp.gmail.com"
   smtp_port: 587
   use_tls: true
