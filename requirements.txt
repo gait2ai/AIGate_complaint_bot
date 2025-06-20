@@ -1,0 +1,56 @@
+# requirements.txt
+# Dependencies for the Institution Complaint Management Bot
+# Last Updated: [تاريخ اليوم]
+
+# -----------------------------------------------------------------------------
+# Core Telegram Bot Framework
+# -----------------------------------------------------------------------------
+# python-telegram-bot v21.x introduced breaking changes.
+# Pinning to a specific stable version in the v20.x series is recommended.
+python-telegram-bot[ext]>=20.8,<21.0
+
+# -----------------------------------------------------------------------------
+# Configuration & Environment Management
+# -----------------------------------------------------------------------------
+# For loading YAML configuration files.
+PyYAML>=6.0,<7.0
+
+# For strict configuration validation and type-safe settings management.
+# Pydantic v2 is a major rewrite and required for modern features.
+pydantic>=2.7,<3.0
+
+# For loading sensitive credentials from .env files.
+python-dotenv>=1.0.1,<2.0.0
+
+# Used by pydantic for environment variable loading.
+pydantic-settings>=2.2,<3.0
+
+# -----------------------------------------------------------------------------
+# Asynchronous Operations & HTTP Client
+# -----------------------------------------------------------------------------
+# Primary async HTTP client for communicating with AI model APIs.
+aiohttp>=3.9.0,<4.0.0
+
+# (Optional but Recommended) For async file I/O in CacheManager.
+# If installed, CacheManager will use it for non-blocking file operations.
+aiofiles>=23.2.1,<24.0.0
+
+# -----------------------------------------------------------------------------
+# Utilities
+# -----------------------------------------------------------------------------
+# For handling timezone-aware datetimes.
+pytz>=2024.1
+
+# =============================================================================
+# OPTIONAL: Gmail API Dependencies
+# =============================================================================
+# The current implementation in institution_bot_logic.py uses SMTP.
+# These dependencies are only required if you decide to switch back to the
+# Google/Gmail API for sending emails.
+# For now, they are commented out to keep the dependency list minimal.
+#
+# google-api-python-client>=2.126.0,<3.0.0
+# google-auth>=2.29.0,<3.0.0
+# google-auth-oauthlib>=1.2.0,<2.0.0
+#
+# =============================================================================
