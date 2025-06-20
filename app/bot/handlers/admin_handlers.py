@@ -125,7 +125,7 @@ async def admin_start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int
         'admin_welcome',
         bot_instance,
         is_arabic,
-        user_first_name=escape_markdown_v2(user.first_name)
+        user_first_name=escape_markdown_v2(user.first_name))
     
     await update.message.reply_text(
         welcome_message,
