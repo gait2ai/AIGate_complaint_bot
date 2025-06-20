@@ -17,7 +17,7 @@ PyYAML>=6.0,<7.0
 
 # For strict configuration validation and type-safe settings management.
 # Pydantic v2 is a major rewrite and required for modern features.
-pydantic>=2.7,<3.0
+pydantic[email]<3.0,>=2.7
 
 # For loading sensitive credentials from .env files.
 python-dotenv>=1.0.1,<2.0.0
