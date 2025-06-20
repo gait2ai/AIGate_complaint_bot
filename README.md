@@ -136,4 +136,4 @@ Fork → Branch → Commit → Push → PR
 
 ## 📄 License
 
-This project is licensed under the MIT License. See `LICENSE.md` for details.
+This project is licensed under a dual-license model. Please see the [LICENSE.md](LICENSE.md) file for complete licensing information.
