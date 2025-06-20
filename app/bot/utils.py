@@ -21,6 +21,7 @@ import re
 from functools import wraps
 from typing import Dict, Any, Optional, TYPE_CHECKING
 from telegram import Update, ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton, constants
+from telegram.ext import ContextTypes
 
 # Type hinting for bot_instance without circular imports
 if TYPE_CHECKING:
