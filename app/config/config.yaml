@@ -15,15 +15,15 @@
 # Institution Information
 # ------------------------------------------
 institution:
-  name: "مؤسستك"
-  name_en: "Your Institution"
+  name: "جمعية بناء الخيرية"
+  name_en: "BCFHD"
   contact:
     phone: "+9671234567"
-    email: "info@yourinstitution.org"
+    email: "bena@bcfhd.org"
     address: "تعز، اليمن"
     address_en: "Taiz, Yemen"
   description: "مؤسسة تهدف إلى تقديم خدمات متميزة للمستفيدين."
-  website: "https://yourinstitution.org/"
+  website: "https://bcfhd.org/"
   timezone: "Asia/Aden"
 
 # ------------------------------------------
