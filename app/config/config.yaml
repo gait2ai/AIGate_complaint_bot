@@ -133,16 +133,16 @@ email_config:
 # AI Models & Prompt Configuration
 # ------------------------------------------
 ai_models:
-  primary_model: "google/gemma-7b-it"
+  primary_model: "deepseek/deepseek-chat-v3-0324:free"
   fallback_models:
-    - "deepseek/deepseek-prover-v2"
-    - "mistralai/mistral-small-3.1-24b-instruct:free"
-    - "microsoft/phi-4-reasoning:free"
+    - "google/gemini-2.0-flash-exp:free"
+    - "mistralai/mistral-nemo:free"
+    - "qwen/qwq-32b:free"
     - "google/gemma-2-9b-it:free"
   base_url: "https://openrouter.ai/api/v1/chat/completions"
   timeout: 60
   max_tokens: 2500
-  temperature: 0.3
+  temperature: 0.2
   direct_fallback_enabled: true
   stream_responses: false
   huggingface_direct_provider:
