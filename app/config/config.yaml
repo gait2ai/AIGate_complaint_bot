@@ -133,9 +133,9 @@ email_config:
 # AI Models & Prompt Configuration
 # ------------------------------------------
 ai_models:
-  primary_model: "google/gemma-7b-it:free"
+  primary_model: "google/gemma-7b-it"
   fallback_models:
-    - "deepseek/deepseek-prover-v2:free"
+    - "deepseek/deepseek-prover-v2"
     - "mistralai/mistral-small-3.1-24b-instruct:free"
     - "microsoft/phi-4-reasoning:free"
     - "google/gemma-2-9b-it:free"
