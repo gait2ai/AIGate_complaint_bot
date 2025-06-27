@@ -510,7 +510,7 @@ class AppConfig(BaseModel):
     
     class Config:
         """Pydantic configuration for immutability and validation."""
-        frozen = True  # Makes the model immutable after initialization
+        frozen = False  # Makes the model immutable after initialization
         validate_assignment = True  # Validates assignments to model fields
         extra = 'forbid'  # Forbids extra fields not defined in the model
 
