@@ -17,10 +17,10 @@ application_settings:
   data_collection_fields:
     sex: true
     phone: true
-    email: true
-    department: true
-    position: true
-    complaint_type: true
+    email: false
+    department: false
+    position: false
+    complaint_type: false
     residence_status: true
     governorate: true
     directorate: true
