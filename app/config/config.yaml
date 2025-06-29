@@ -17,7 +17,7 @@ application_settings:
   data_collection_fields:
     sex: true
     phone: true
-    email: false
+    email: true
     department: false
     position: false
     complaint_type: false
