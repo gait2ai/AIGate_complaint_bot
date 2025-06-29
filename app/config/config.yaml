@@ -1,0 +1,388 @@
+# AI Gate for Artificial Intelligence Applications
+# Institution Complaint Management Bot - Central Configuration File
+
+institution:
+  name: "جمعية بناء الخيرية"
+  name_en: "BCFHD"
+  contact:
+    phone: "+9671234567"
+    email: "bena@bcfhd.org"
+    address: "تعز، اليمن"
+    address_en: "Taiz, Yemen"
+  description: "مؤسسة تهدف إلى تقديم خدمات متميزة للمستفيدين."
+  website: "https://bcfhd.org/"
+  timezone: "Asia/Aden"
+
+application_settings:
+  data_collection_fields:
+    sex: true
+    phone: true
+    email: true
+    department: true
+    position: true
+    complaint_type: true
+    residence_status: true
+    governorate: true
+    directorate: true
+    village: true
+  
+  selection_options:
+    residence_status_ar:
+      - "مقيم"
+      - "نازح"
+      - "عائد"
+    residence_status_en:
+      - "Resident"
+      - "IDP"
+      - "Returnee"
+    governorates_ar:
+      - "تعز"
+      - "صنعاء"
+      - "عدن"
+      - "إب"
+      - "غير ذلك"
+    governorates_en:
+      - "Taiz"
+      - "Sana'a"
+      - "Aden"
+      - "Ibb"
+      - "Other"
+
+  validation:
+    phone_patterns:
+      - '^7[0-9]{8}$'
+      - '^009677[0-9]{8}$'
+      - '^\+9677[0-9]{8}$'
+      - '^[0-9]{9}$'
+    min_name_words: 2
+    min_suggestion_length: 15
+    max_input_length: 2000
+    max_title_length: 200
+    min_age: 16
+
+  flow_control:
+    summary_preview_length: 300
+    snippet_preview_length: 100
+    max_recent_complaints: 10
+    user_input_timeout: 300
+    max_retry_attempts: 3
+
+  placeholders:
+    anonymous_user_name: "Anonymous User"
+    default_complaint_title: "General Inquiry"
+    default_category: "General"
+    empty_description_placeholder: "No description provided"
+    default_contact_method: "phone"
+  
+  complaint_id_prefix: "BCF00"
+     
+  ai_fallback_responses:
+    - "I apologize, but I'm currently experiencing technical difficulties. Please try again in a few moments."
+    - "I'm temporarily unable to process your request due to system issues. Please contact our support team if this issue persists."
+    - "There seems to be a temporary service disruption. Please try your request again shortly."
+
+  ui_messages:
+    welcome_message: "مرحباً بك في نظام إدارة الشكاوى. كيف يمكننا مساعدتك اليوم؟"
+    goodbye_message: "شكراً لاستخدامك خدمتنا. ملاحظاتك مهمة بالنسبة لنا."
+    error_generic: "حدث خطأ أثناء معالجة طلبك. يرجى المحاولة مرة أخرى."
+    success_complaint_submitted: "تم تقديم شكواك بنجاح. رقم المرجع: {reference_id}"
+    validation_error_name: 'يرجى تقديم اسمك الكامل (اسمين على الأقل)'
+    validation_error_phone: "يرجى تقديم رقم هاتف صالح."
+    validation_error_description: 'يرجى تقديم وصف أكثر تفصيلاً (15 حرفاً على الأقل)'
+    welcome_options: "مرحباً بك {user_first_name} في بوت {institution_name}. يرجى اختيار أحد الخيارات:"
+    welcome_back: "مرحباً بك مرة أخرى {user_first_name}! كيف يمكنني مساعدتك اليوم؟"
+    how_can_i_help_today: "كيف يمكنني خدمتك اليوم؟"
+    option_complaint: "📝 تقديم شكوى"
+    option_inquiry: "❓ استفسار"
+    option_status: "📊 حالة الشكوى"
+    option_help: "ℹ️ المساعدة"
+    option_settings: "⚙️ الإعدادات"
+    option_contact: "📞 التواصل"
+    option_suggestion: "💡 تقديم اقتراح"
+    option_feedback: "📋 تقديم ملاحظة"
+    complaint_start: "سأساعدك في تقديم شكوى جديدة. يرجى تعبئة المعلومات التالية:"
+    complaint_name_prompt: "الرجاء إدخال اسمك الكامل:"
+    complaint_phone_prompt: "الرجاء إدخال رقم هاتفك:"
+    complaint_email_prompt: 'الرجاء إدخال بريدك الإلكتروني (اختياري)'
+    complaint_sex_prompt: "الرجاء تحديد الجنس:"
+    complaint_age_prompt: "الرجاء إدخال العمر:"
+    complaint_description_prompt: "الرجاء وصف شكواك بالتفصيل:"
+    complaint_location_prompt: "الرجاء تحديد موقع الحادثة أو إرسال الموقع:"
+    complaint_new_or_reminder: "هل تريد تقديم شكوى جديدة أم متابعة شكوى سابقة؟"
+    complaint_use_original_text: "استخدام النص الأصلي"
+    complaint_write_new_text: "كتابة نص جديد"
+    complaint_review: "مراجعة بيانات الشكوى:\n\n{complaint_details}\n\nهل تريد تأكيد إرسال الشكوى؟"
+    complaint_submitted: "✅ تم تقديم شكواك بنجاح!\n\nرقم الشكوى: {complaint_id}\n\nسيتم التواصل معك خلال {response_time}"
+    complaint_cancelled: "❌ تم إلغاء تقديم الشكوى. يمكنك البدء من جديد في أي وقت."
+    complaint_data_collected: "تم جمع البيانات بنجاح. يرجى مراجعة المعلومات."
+    status_prompt: "الرجاء إدخال رقم الشكوى للاستعلام عن حالتها:"
+    status_not_found: "❌ لم يتم العثور على شكوى برقم: {complaint_id}"
+    status_found: "📊 حالة الشكوى رقم {complaint_id}:\n\n{status_details}"
+    invalid_phone: '❌ رقم الهاتف غير صحيح. يرجى إدخال رقم صحيح (مثال: 05xxxxxxxx)'
+    invalid_phone_format: "❌ تنسيق رقم الهاتف غير صحيح. يرجى إدخال رقم بالتنسيق الصحيح"
+    invalid_email: "❌ البريد الإلكتروني غير صحيح. يرجى إدخال بريد صحيح أو اختر 'تخطي'"
+    invalid_age: "❌ العمر غير صحيح. يرجى إدخال رقم بين 1 و 120"
+    input_too_long: "❌ النص طويل جداً. الحد الأقصى {max_length} حرف"
+    input_required: "❌ هذا الحقل مطلوب. يرجى إدخال القيمة المطلوبة"
+    name_too_short: "❌ الاسم قصير جداً. يرجى إدخال الاسم الكامل"
+    invalid_selection: "❌ اختيارك غير صالح. يرجى اختيار أحد الخيارات المتاحة"
+    invalid_name_format: '❌ يرجى إدخال اسم صحيح (اسمين على الأقل)'
+    input_too_short: "❌ النص قصير جداً. يرجى تقديم المزيد من التفاصيل"
+    prompt_enter_residence: "الرجاء تحديد حالة الإقامة:"
+    prompt_enter_governorate: "الرجاء تحديد المحافظة:"
+    prompt_enter_directorate: "الرجاء تحديد المديرية:"
+    prompt_enter_village: "الرجاء تحديد القرية/الحي:"
+    prompt_enter_department: "الرجاء إدخال القسم:"
+    prompt_enter_position: "الرجاء إدخال المنصب/المسمى الوظيفي:"
+    prompt_enter_complaint_type: "الرجاء إدخال نوع الشكوى:"
+    critical_complaint_detected_prompt_name: "❗ تم تحديد أن شكواك عاجلة. يرجى إدخال اسمك الكامل:"
+    prompt_enter_critical_phone: "❗ يرجى إدخال رقم هاتف للتواصل العاجل:"
+    validation_error_email: "❌ البريد الإلكتروني غير صحيح. يرجى إدخال بريد صحيح"
+    validation_error_complaint_text_too_short: '❌ وصف الشكوى قصير جداً. يرجى تقديم المزيد من التفاصيل (20 حرف على الأقل)'
+    validation_error_department: "❌ يرجى إدخال اسم القسم"
+    validation_error_position: "❌ يرجى إدخال المسمى الوظيفي"
+    validation_error_complaint_type: "❌ يرجى إدخال نوع الشكوى"
+    btn_yes: "نعم ✅"
+    btn_no: "لا ❌"
+    btn_confirm: "تأكيد"
+    btn_cancel: "إلغاء"
+    btn_skip: "تخطي"
+    btn_back: "رجوع"
+    btn_next: "التالي"
+    btn_main_menu: "القائمة الرئيسية 🏠"
+    btn_male: "ذكر"
+    btn_female: "أنثى"
+    btn_prefer_not_say: "أفضل عدم الإفصاح"
+    btn_submit_confirm: "تأكيد الإرسال"
+    btn_new_complaint: "شكوى جديدة"
+    btn_follow_complaint: "متابعة شكوى"
+    btn_reminder_previous: "تذكير بشكوى سابقة"
+    btn_yes_use_data: "نعم، استخدم بياناتي"
+    btn_no_new_data: "لا، سأدخل بيانات جديدة"
+    btn_submit_final: "إرسال نهائي"
+    btn_cancel_submission: "إلغاء الإرسال"
+    btn_back_to_admin: "⬅️ العودة إلى القائمة"
+    btn_exit: "🚪 خروج"
+    error_network: "❌ خطأ في الاتصال. يرجى التحقق من الإنترنت والمحاولة مرة أخرى"
+    error_server: "❌ خطأ في الخادم. يرجى المحاولة لاحقاً"
+    error_permission: "❌ لا تملك صلاحية للوصول إلى هذه الخدمة"
+    error_session_expired: "❌ انتهت جلسة العمل. يرجى البدء من جديد"
+    error_start_command: "عذراً، حدث خطأ أثناء بدء التشغيل. يرجى المحاولة مرة أخرى."
+    error_unknown_intent: "عذراً، لم أتمكن من فهم طلبك بوضوح."
+    error_processing_message: "عذراً، حدث خطأ أثناء معالجة رسالتك."
+    error_invalid_selection: "عذراً، اختيارك غير صالح."
+    error_processing_selection: "عذراً، حدث خطأ أثناء معالجة اختيارك."
+    error_no_user_context: "❌ لا يمكن تحديد هويتك. يرجى البدء من جديد بإرسال /start"
+    error_submission_failed: "❌ فشل إرسال الشكوى. يرجى المحاولة مرة أخرى."
+    error_submission_failed_critical: "❌ فشل إرسال الشكوى العاجلة. يرجى الاتصال بنا مباشرة."
+    error_generic_unexpected: "حدث خطأ غير متوقع"
+    help_main: "📖 مساعدة بوت {institution_name}\n\nيمكنك استخدام هذا البوت لـ:\n• تقديم الشكاوى\n• متابعة حالة الشكاوى\n• الاستفسارات العامة\n\nللمساعدة اتصل: {contact_info}"
+    contact_info: "📞 معلومات التواصل:\n\nالهاتف: {phone}\nالبريد: {email}\nالموقع: {website}\nالعنوان: {address}"
+    contact_details_full: "📞 معلومات التواصل الكاملة:\n\nالاسم الرسمي: {institution_name}\nالهاتف: {phone}\nالبريد الإلكتروني: {email}\nالموقع الإلكتروني: {website}\nالعنوان: {address}"
+    settings_language: "اختر اللغة المفضلة:"
+    settings_notifications: "إعدادات الإشعارات:"
+    language_changed: "✅ تم تغيير اللغة بنجاح"
+    prompt_enter_suggestion_text: "يرجى كتابة اقتراحك أو ملاحظاتك بالتفصيل:"
+    confirm_suggestion_text: "📋 مراجعة الاقتراح:\n\n`{suggestion_text}`\n\nهل تريد تأكيد إرسال هذا الاقتراح؟"
+    suggestion_submitted_successfully: "✅ شكراً لك! تم استلام اقتراحك بنجاح."
+    suggestion_submission_cancelled: "❌ تم إلغاء تقديم الاقتراح."
+    suggestion_flow_cancelled: "❌ تم إلغاء عملية تقديم الاقتراح."
+    admin_dashboard: "لوحة التحكم - الإحصائيات:\n\n{statistics}"
+    admin_unauthorized: "❌ غير مصرح لك بالوصول إلى لوحة التحكم"
+    admin_welcome: 'أهلاً بك أيها المدير *{user_first_name}* في لوحة التحكم الرئيسية\.'
+    admin_menu_prompt: "يرجى تحديد الإجراء المطلوب من القائمة أدناه:"
+    admin_option_stats: "📊 عرض الإحصائيات"
+    admin_option_export: "📤 تصدير البيانات"
+    admin_stats_loading: "⏳ جاري تحميل الإحصائيات، يرجى الانتظار..."
+    admin_stats_header: "📊 *ملخص إحصائيات الشكاوى*"
+    admin_stats_total: "إجمالي الشكاوى: *{count}*"
+    admin_stats_critical: 'الشكاوى الحرجة: *{count}* ({percentage}%)'
+    admin_stats_breakdown: '\nتفصيل حسب الحالة:'
+    admin_stats_item: '• {status}: *{count}* ({percentage}%)'
+    admin_stats_no_data: 'لا توجد بيانات إحصائية متاحة حالياً.'
+    admin_stats_timestamp: '\n_تم إنشاء التقرير في: {timestamp}_'
+    admin_export_placeholder: 'ميزة تصدير البيانات قيد التطوير حالياً. سيتم إعلامك عند توفرها.'
+    admin_exit_message: 'تم الخروج من لوحة التحكم. شكراً لك.'
+    admin_cancel_message: "تم إلغاء الجلسة الإدارية."
+    status_pending: "قيد المراجعة"
+    status_in_progress: "قيد المعالجة"
+    status_resolved: "تم الحل"
+    status_closed: "مغلقة"
+    created_at: "تاريخ الإنشاء"
+    updated_at: "آخر تحديث"
+    reminder_followup: "تذكير: شكواك رقم {complaint_id} قيد المراجعة. سنتواصل معك قريباً."
+    notification_status_update: "🔔 تحديث حالة الشكوى {complaint_id}: {new_status}"
+    reminder_no_complaints_found: "❌ لم يتم العثور على شكاوى سابقة."
+    reminder_acknowledged: "✅ تم تسجيل طلب التذكير بالشكوى رقم {complaint_id}. سنتواصل معك قريباً."
+    reminder_log_error: "❌ حدث خطأ أثناء تسجيل طلب التذكير. يرجى المحاولة مرة أخرى."
+    prompt_enter_name: "يرجى إدخال اسمك الكامل:"
+    prompt_enter_phone: "يرجى إدخال رقم هاتفك:"
+    prompt_enter_email: 'يرجى إدخال بريدك الإلكتروني (اختياري)'
+    prompt_select_sex: "يرجى تحديد الجنس:"
+    prompt_enter_age: "يرجى إدخال عمرك:"
+    prompt_enter_complaint_text: "يرجى وصف شكواك بالتفصيل:"
+    prompt_enter_location: "يرجى تحديد موقع الحادثة:"
+    ask_new_or_reminder: "لديك {num_complaints} شكوى/شكاوى سابقة. هل تريد تقديم شكوى جديدة أو تذكير بشكوى سابقة؟"
+    new_complaint_selected: "✅ سيتم البدء في تقديم شكوى جديدة."
+    existing_profile_summary: "📋 يوجد لديك ملف شخصي مسجل:\n\nالاسم: {name}\nالجنس: {sex}\nالهاتف: {phone}\n\nهل تريد استخدام هذه البيانات؟"
+    profile_data_confirmed: "✅ تم تأكيد استخدام بياناتك المسجلة."
+    collecting_new_profile_data: "سيتم جمع بياناتك الشخصية الجديدة الآن."
+    offer_use_original_complaint: "لديك نص شكوى مسبق:\n\n{original_text_snippet}...\n\nهل تريد استخدام هذا النص؟"
+    using_original_complaint: "✅ سيتم استخدام نص الشكوى الأصلي."
+    prompt_enter_new_complaint_text: "يرجى إدخال نص الشكوى الجديد:"
+    complaint_review_summary_header: "📋 ملخص الشكوى:\n"
+    confirm_submission_prompt: "هل تريد تأكيد إرسال هذه الشكوى؟"
+    complaint_submitted_successfully: "✅ تم تقديم شكواك بنجاح برقم {complaint_id}. شكراً لك."
+    complaint_flow_cancelled: "❌ تم إلغاء عملية تقديم الشكوى."
+    critical_complaint_default_text: "شكوى عاجلة - تم تقديمها عبر البوت"
+    critical_complaint_submitted_successfully: "❗ تم تقديم شكواك العاجلة برقم {complaint_id}. سيتم التواصل معك فوراً."
+    label_name: "الاسم"
+    label_sex: "الجنس"
+    label_phone: "الهاتف"
+    label_residence_status: "حالة الإقامة"
+    label_governorate: "المحافظة"
+    label_directorate: "المديرية"
+    label_village: "القرية/الحي"
+    label_complaint_text: "نص الشكوى"
+    label_english_summary: "ملخص بالإنجليزية"
+    summary_not_yet_generated: "لم يتم إنشاء ملخص بعد"
+    data_not_available: "غير متوفر"
+    not_available_placeholder: "غير متاح"
+    conversation_cancelled: "تم إلغاء المحادثة"
+
+  business_rules:
+    auto_escalation_days: 7
+    auto_resolution_days: 30
+    supervisor_approval_threshold: 8
+    followup_reminder_days: 3
+
+admin_settings:
+  admin_user_ids:
+    - 123456789
+    - 987654321
+
+critical_complaint_config:
+  notification_email: "alerts@yourinstitution.org,manager@yourinstitution.org"
+  sms_notification_enabled: false
+  sms_notification_number: "+9671234567"
+  identification_criteria:
+    - "Mentions of immediate danger, safety hazards, or life-threatening situations"
+    - "Reports of severe health issues or urgent medical needs related to our services"
+    - "Allegations of severe rights violations, abuse, or exploitation (PSEA)"
+    - "Situations involving vulnerable individuals (children, elderly, disabled) in immediate risk"
+    - "Complete and critical failure of essential services (water, electricity, medical care)"
+  severity_levels:
+    low:
+      score: "1-3"
+      description: "Minor issues, standard processing"
+    medium:
+      score: "4-6"
+      description: "Important issues, expedited processing"
+    high:
+      score: "7-8"
+      description: "Serious issues, priority processing"
+    critical:
+      score: "9-10"
+      description: "Urgent issues, immediate attention required"
+
+email_config:
+  smtp_server: "smtp.gmail.com"
+  smtp_port: 587
+  use_tls: true
+  use_ssl: false
+  templates:
+    critical_subject: "[URGENT] Critical Complaint Received - {institution_name}"
+    regular_subject: "New Complaint Received - {institution_name}"
+    sender_name: "Complaint Management System"
+  behavior:
+    max_retries: 3
+    retry_delay: 5
+    timeout: 30
+
+ai_models:
+  primary_model: "deepseek/deepseek-chat-v3-0324:free"
+  fallback_models:
+    - "google/gemini-2.0-flash-exp:free"
+    - "mistralai/mistral-nemo:free"
+    - "qwen/qwq-32b:free"
+    - "google/gemma-2-9b-it:free"
+  base_url: "https://openrouter.ai/api/v1/chat/completions"
+  timeout: 60
+  max_tokens: 2500
+  temperature: 0.2
+  direct_fallback_enabled: true
+  stream_responses: false
+  huggingface_direct_provider:
+    api_key_env_var: "HF_API_TOKEN"
+    primary_model_hf: "google/gemma-7b-it"
+    fallback_models_hf:
+      - "HuggingFaceH4/zephyr-7b-beta"
+      - "NousResearch/Nous-Hermes-2-Mistral-7B-DPO"
+      - "mistralai/Mistral-7B-Instruct-v0.1"
+    base_url_hf: "https://api-inference.huggingface.co/models/"
+
+prompts:
+  system_template_file: "institution_system_prompt.txt"
+  language_instructions:
+    ar: "يرجى الرد باللغة العربية بطريقة مهنية ومتعاطفة مناسبة لمسؤول الشكاوى. استخدم لهجة محترمة ومتفهمة."
+    en: "Please respond in English in a professional and empathetic manner appropriate for a complaints officer. Use respectful and understanding tone."
+  default_output_formats:
+    classification: 'Provide the response in JSON format with keys: "category", "subcategory", "sensitivity_level", "confidence_score", "reasoning".'
+    summarization: 'Provide a concise summary in 2-3 sentences highlighting the main complaint, key details, and recommended priority level.'
+    critical_identification: 'Respond with "CRITICAL" or "NON_CRITICAL" followed by a confidence score (1-10) and brief justification.'
+    response_generation: 'Provide a professional response that acknowledges the complaint, shows empathy, and clearly indicates next steps and timeline.'
+    default: 'Provide a clear, structured response addressing the specific task requirements with appropriate professional tone.'
+  conversation_prompts:
+    initial_greeting: "Hello! I'm here to help you submit and manage your complaints. What would you like to do today?"
+    collect_details: "Please provide the following information to help us process your complaint effectively:"
+    confirm_submission: "Please review your complaint details below and confirm if everything is correct:"
+    completion_message: "Thank you for submitting your complaint. We will review it and respond within {response_time} business days."
+
+cache:
+  enabled: true
+  cache_dir: "app_cache"
+  max_size: 1000
+  ttl: 3600
+  cleanup_interval: 300
+  categories:
+    ai_response:
+      ttl: 1800
+      persistent: true
+      compress: true
+    beneficiary_profiles:
+      ttl: 3600
+      persistent: false
+      compress: false
+
+logging:
+  level: "INFO"
+  log_file_path: "logs/institution_bot.log"
+  max_file_size_mb: 10
+  backup_count: 5
+  console_output: true
+  console_level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+  component_levels:
+    ai_handler: "DEBUG"
+    email_service: "INFO"
+    database: "WARNING"
+  mask_sensitive_data: true
+  sensitive_fields:
+    - "phone"
+    - "email"
+    - "password"
+    - "api_key"
+
+database:
+  directory: "app/database"
+  filename: "ins_data.db"
+
+security:
+  rate_limiting:
+    enabled: true
+    requests_per_minute: 30
+
+monitoring:
+  health_checks:
+    enabled: true
