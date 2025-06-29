@@ -18,9 +18,9 @@ application_settings:
     sex: true
     phone: true
     email: true
-    department: false
-    position: false
-    complaint_type: false
+    department: true
+    position: true
+    complaint_type: true
     residence_status: true
     governorate: true
     directorate: true
