@@ -319,7 +319,7 @@ async def handle_new_or_reminder_choice(update: Update, context: ContextTypes.DE
                 "name": most_recent.get("submitter_name", get_message('data_not_available', bot_instance, is_arabic)),
                 "text_snippet": most_recent.get("summary", get_message('data_not_available', bot_instance, is_arabic))[:50],
                 "date": most_recent.get("date", get_message('data_not_available', bot_instance, is_arabic))
-            ]
+            }
             
             reminder_logged = await bot_instance.log_complaint_reminder_note(
                 user_id=user.id,
