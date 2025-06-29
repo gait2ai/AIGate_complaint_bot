@@ -368,6 +368,7 @@ Your response must be a valid JSON object with the following structure:
             # Use the generic prompt builder function
             system_prompt = await self.prompt_builder.build_institution_task_prompt(
                 task_specific_instruction=task_instruction,
+                user_input_text=user_input_text,
                 context_data=context_data,
                 output_format_instruction=output_format,
                 user_language_code='ar',
