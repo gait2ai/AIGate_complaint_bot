@@ -858,3 +858,4 @@ class InstitutionBot:
                 'total_complaints': 0,
                 'critical_complaints': 0,
                 'status_counts': {}
+            }
