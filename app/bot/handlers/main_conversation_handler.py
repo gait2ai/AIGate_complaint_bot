@@ -16,6 +16,7 @@ Core Philosophy:
 
 from telegram.ext import (
     ConversationHandler,
+    CommandHandler,
     MessageHandler,
     CallbackQueryHandler,
     filters
