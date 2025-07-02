@@ -50,7 +50,7 @@ async def handle_initial_text_message(
     try:
         # Safety check: Exit immediately if a conversation is already in progress
         if context.user_data.get('conversation_state') is not None:
-        logger.debug(f"Active conversation detected for user {update.effective_user.id if update.effective_user else 'unknown'}, yielding control to state-specific handler")
+        # logger.debug(f"Active conversation detected for user {update.effective_user.id if update.effective_user else 'unknown'}, yielding control to state-specific handler")
         return None
         
         bot_instance: InstitutionBot = context.bot_data['bot_instance']
