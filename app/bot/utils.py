@@ -553,7 +553,7 @@ def get_message(message_key: str, bot_instance: 'InstitutionBot', is_arabic_repl
         # Get message directly from the default dictionary
         message_template = None
         if language in DEFAULT_MESSAGES and message_key in DEFAULT_MESSAGES[language]:
-    message_template = DEFAULT_MESSAGES[language][message_key]
+            message_template = DEFAULT_MESSAGES[language][message_key]
         # If no message found, return error placeholder
         if message_template is None:
             logger.warning(f"Message key '{message_key}' not found for language '{language}'")
