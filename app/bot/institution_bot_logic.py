@@ -229,7 +229,7 @@ class InstitutionBot:
             self.logger.error(f"Error in analyze_first_contact_message: {e}")
             return "CLARIFICATION_NEEDED", "I'm sorry, I encountered an issue processing your message. Could you please try again?"
     
-    def is_name_valid(self, question_asked: str, user_answer: str) -> bool:
+    async def is_name_valid(self, question_asked: str, user_answer: str) -> bool:
         """
         Validate if user's answer is relevant to the question asked.
         
