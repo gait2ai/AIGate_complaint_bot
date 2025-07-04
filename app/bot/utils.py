@@ -55,6 +55,7 @@ def escape_markdown_v2(text: str) -> str:
 DEFAULT_MESSAGES: Dict[str, Dict[str, str]] = {
     'ar': {
         # Welcome and main menu messages
+        'start_command_response': "مرحباً بك في نظام إدارة الشكاوى والملاحظات الخاص بـ {institution_name}.\n\nلبدء محادثة، يرجى كتابة طلبك أو شكواك مباشرة في أي وقت."
         'welcome_options': "مرحباً بك {user_first_name} في بوت {institution_name}. يرجى اختيار أحد الخيارات:",
         'welcome_back': "مرحباً بك مرة أخرى {user_first_name}! كيف يمكنني مساعدتك اليوم؟",
         'how_can_i_help_today': "كيف يمكنني خدمتك اليوم؟",
