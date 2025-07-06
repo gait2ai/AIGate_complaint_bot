@@ -131,7 +131,7 @@ async def handle_initial_text_message(
     try:
         # Safety check: Exit immediately if a conversation is already in progress
         if context.user_data.get('conversation_state') is not None:
-            return None 
+            return false 
         
         bot_instance: InstitutionBot = context.bot_data['bot_instance']
         user = update.effective_user
