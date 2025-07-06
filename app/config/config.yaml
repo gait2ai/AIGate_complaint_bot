@@ -184,7 +184,7 @@ cache:
       compress: true
     beneficiary_profiles:
       ttl: 3600
-      persistent: false
+      persistent: true
       compress: false
 
 logging:
