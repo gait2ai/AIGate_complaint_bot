@@ -24,7 +24,7 @@ from telegram.ext import ContextTypes, ConversationHandler
 
 from app.bot.institution_bot_logic import InstitutionBot
 from app.bot.utils import get_message, get_user_preferred_language_is_arabic
-from app.bot.main_conversation_handler import cleanup_conversation_state
+from app.bot.handlers.main_conversation_handler import cleanup_conversation_state
 
 logger = logging.getLogger(__name__)
 
