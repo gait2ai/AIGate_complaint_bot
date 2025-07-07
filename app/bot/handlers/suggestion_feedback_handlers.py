@@ -23,7 +23,7 @@ from telegram.ext import (
     ConversationHandler
 )
 
-from app.bot.main_conversation_handler import cleanup_conversation_state
+from app.bot.handlers.main_conversation_handler import cleanup_conversation_state
 
 from app.bot.institution_bot_logic import InstitutionBot, ComplaintData
 from app.bot import states
