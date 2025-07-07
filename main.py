@@ -57,7 +57,7 @@ from app.core.email_service import EmailService
 from app.bot.institution_bot_logic import InstitutionBot
 
 # Import the unified main conversation handler
-from app.bot.main_conversation_handler import get_main_conversation_handler
+from app.bot.handlers.main_conversation_handler import get_main_conversation_handler
 
 
 # Global variables for cleanup
