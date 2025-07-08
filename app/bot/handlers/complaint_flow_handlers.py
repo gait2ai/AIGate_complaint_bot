@@ -530,11 +530,11 @@ async def process_name(update: Update, context: ContextTypes.DEFAULT_TYPE) -> in
             return states.COLLECTING_NAME
         
         # Perform AI-powered name validation
-        is_valid = await bot_instance.is_name_valid(
+        # is_valid = await bot_instance.is_name_valid(
             question_asked=get_message('prompt_enter_name', bot_instance, is_arabic),
             user_answer=name_input
         )
-        
+        is_valid = True
         if not is_valid:
             await update.message.reply_text(get_message('validation_error_name_ai', bot_instance, is_arabic))
             return states.COLLECTING_NAME
