@@ -760,7 +760,7 @@ async def process_governorate(update: Update, context: ContextTypes.DEFAULT_TYPE
         
         # Check if "Other" was selected
         if governorate == get_message('governorates_other', bot_instance, is_arabic):
-        	set_conversation_state(context, states.COLLECTING_GOVERNORATE_OTHER)
+            set_conversation_state(context, states.COLLECTING_GOVERNORATE_OTHER),
             await query.edit_message_text(get_message('prompt_enter_governorate_other', bot_instance, is_arabic))
             return states.COLLECTING_GOVERNORATE_OTHER
         
