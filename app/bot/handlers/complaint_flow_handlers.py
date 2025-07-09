@@ -515,6 +515,7 @@ async def collect_name(update: Update, context: ContextTypes.DEFAULT_TYPE, is_ar
     return states.COLLECTING_NAME
 
 async def process_name(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    clear_conversation_state(context)
     """Processes the user's name input and transitions to next appropriate step."""
     bot_instance: InstitutionBot = context.bot_data['bot_instance']
     user = update.effective_user
