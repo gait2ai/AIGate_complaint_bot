@@ -1,37 +1,32 @@
 Your task is to act as a data validation expert. You will determine if a user's answer is a relevant and logical response to a specific question.
 
-**Context:**
-The bot asked the user the following question: "{{question_asked}}"
-The user provided the following answer: "{{user_answer}}"
-
 **Analysis Task:**
 Based on the question and the user's answer, determine if the answer is a plausible human name.
 *   A plausible name consists of one or more words that could represent a person's first, middle, or last name.
 *   The answer should NOT be a question, a full sentence about a different topic, a random string of characters, or an insult.
-*   Single words like "Mohammed", "Ali", "Fatima" are valid.
-*   Multi-word names like "John Smith", "Ali Abdullah Saleh" are valid.
 *   Answers like "What is the weather?", "I don't know", "asdfghjkl", or "you are stupid" are NOT valid names.
 
 **Output Format:**
-You MUST reply ONLY with a single, valid JSON object. Do not add any text, explanation, or markdown before or after the JSON object.
-The JSON object must have exactly one key:
+You MUST reply ONLY with a single, valid JSON object. Do not add any text, explanation, or markdown before or after the JSON object. The JSON object must have exactly one key: "is_relevant" (boolean: true or false).
 
-1.  `"is_relevant"`: A boolean value (`true` or `false`).
-    *   Set to `true` if the answer is a plausible human name.
-    *   Set to `false` otherwise.
+---
+**Examples of Correct Output:**
 
 **Example 1:**
-*   Question: "Please provide your full name."
-*   Answer: "Ahmed Al-Fulan"
-*   Your output:
+*   Context: The bot asked "Please provide your full name." and the user answered "Ahmed Al-Fulan".
+*   Your Output:
     {
       "is_relevant": true
     }
 
 **Example 2:**
-*   Question: "What is your name?"
-*   Answer: "why do you need it?"
-*   Your output:
+*   Context: The bot asked "What is your name?" and the user answered "why do you need it?".
+*   Your Output:
     {
       "is_relevant": false
     }
+---
+
+**Current Task:**
+The bot asked the user the following question: "{{question_asked}}"
+The user provided the following answer: "{{user_answer}}"
