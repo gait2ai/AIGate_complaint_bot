@@ -245,7 +245,7 @@ class InstitutionBot:
             prompt = self.prompt_builder.generate_input_validation_prompt(question_asked, user_answer)
             
             # Get AI response
-            response = await self.ai_handler.generate_response(prompt)
+            response = await self.ai_handler.generate_response(user_message="", system_prompt=prompt)
             
             # Parse JSON response
             try:
