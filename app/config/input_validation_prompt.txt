@@ -15,18 +15,18 @@ You MUST reply ONLY with a single, valid JSON object. Do not add any text, expla
 **Example 1:**
 *   Context: The bot asked "Please provide your full name." and the user answered "Ahmed Al-Fulan".
 *   Your Output:
-    {
+    {{
       "is_relevant": true
-    }
+    }}
 
 **Example 2:**
 *   Context: The bot asked "What is your name?" and the user answered "why do you need it?".
 *   Your Output:
-    {
+    {{
       "is_relevant": false
-    }
+    }}
 ---
 
 **Current Task:**
-The bot asked the user the following question: "{{question_asked}}"
-The user provided the following answer: "{{user_answer}}"
+The bot asked the user the following question: "{question_asked}"
+The user provided the following answer: "{user_answer}"
