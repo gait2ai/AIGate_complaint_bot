@@ -44,7 +44,7 @@ class ComplaintData(BaseModel):
     telegram_message_date: Optional[datetime] = Field(default=None, description="Date and time of the original Telegram message")
     complaint_id: Optional[int] = Field(default=None, description="Unique complaint identifier")
     submission_time: Optional[str] = Field(default=None, description="Formatted submission timestamp")
-    sensitivity_score: Optional[int] = Field(default=None, description="AI-calculated sensitivity score")
+    sensitivity_score: Optional[str] = Field(default=None, description="AI-calculated sensitivity level (e.g., 'Normal', 'High')")
     
     class Config:
         """Pydantic configuration for the ComplaintData model."""
