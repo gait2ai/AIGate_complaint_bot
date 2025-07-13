@@ -93,9 +93,9 @@ admin_settings:
     - 987654321
 
 critical_complaint_config:
-  notification_email: "alerts@yourinstitution.org,manager@yourinstitution.org"
+  notification_email: "abuamr.dubai@gmail.com,complaints@bcfhd.org"
   sms_notification_enabled: false
-  sms_notification_number: "+9671234567"
+  sms_notification_number: "+967734649369"
   identification_criteria:
     - "Mentions of immediate danger, safety hazards, or life-threatening situations"
     - "Reports of severe health issues or urgent medical needs related to our services"
