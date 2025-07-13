@@ -223,7 +223,7 @@ class InstitutionBot:
                 csv_content = text_buffer.getvalue()
             
             # Convert to bytes and create in-memory binary buffer
-            bytes_buffer = io.BytesIO(csv_content.encode('utf-8'))
+            bytes_buffer = io.BytesIO(csv_content.encode('utf-8-sig'))
             
             # Generate filename with timestamp
             filename = f"{export_type}_export_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv"
