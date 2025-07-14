@@ -50,4 +50,5 @@ You must carefully read the complaint and provide your analysis strictly in a JS
 
 **Final Output Requirement:**
 You MUST reply ONLY with a single, valid JSON object. Do not add any text, explanation, or markdown before or after the JSON object.
-The JSON object must contain these four keys: "complaint_category", "sensitivity", "content_assessment", "summary".
+The JSON object must contain these five keys: "complaint_category", "sensitivity", "content_assessment", "summary", and "is_critical".
+The "is_critical" key must be a boolean value (true or false), and it must be set to true ONLY if the "sensitivity" level is assessed as "High".
