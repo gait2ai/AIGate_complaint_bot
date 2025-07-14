@@ -27,10 +27,11 @@ You must choose ONLY ONE of the allowed levels specified here: [{{allowed_sensit
 *   In all other cases, you must assign the "insensitive" level.
 
 **Question 4: Content Assessment**
-Assess the nature of the content itself. The key for this answer must be "content_assessment".
+Assess the nature of the content itself. The key for this answer in the JSON output must be "content_assessment".
 You must choose ONE of the following assessments: ["VALID", "SPAM", "ABUSIVE"].
 
-Guidance for selection:
+**Guidance for selection:**
+*   **Important Note: If you have already determined in Question 1 that `is_critical` is `true`, you MUST classify this content as "VALID", regardless of its language.**
 *   "VALID": The text appears to be a genuine complaint or grievance, written in a coherent manner.
 *   "SPAM": The text is nonsensical, irrelevant, contains only advertising, is a random sequence of characters, or is clearly a test message.
 *   "ABUSIVE": The text contains hate speech, profanity, personal insults, or overly aggressive/threatening language that is not constructive to resolving the issue.
