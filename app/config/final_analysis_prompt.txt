@@ -1,48 +1,48 @@
-Your task is to perform a detailed and objective analysis of the user's complaint text provided below.
-You must carefully read the complaint and provide your analysis strictly in a JSON object format, following all instructions precisely.
+Your task is to act as an expert analysis engine. You will be given a user's complaint text.
+You must carefully read the text, understand its full context, and then answer the following five questions.
+Your final output must be ONLY a single, valid JSON object containing the answers to these five questions.
 
 ---
 **User Complaint Text:**
 {{complaint_text}}
 ---
 
-**Analysis Instructions & Criteria:**
+**Analysis Questions:**
 
-### 1. Complaint Category Analysis
+**Question 1: Criticality Assessment**
+Based on your understanding of the complaint, you must determine if this complaint is critical. The key for this answer in the JSON output must be "is_critical". The value must be a boolean (`true` or `false`).
+Set the value to `true` ONLY if the complaint's content is related to any of the following topics, which are based on this list of keywords: [{{critical_keywords}}].
+In all other cases, set the value to `false`.
 
-**Task:** Classify the complaint into ONE of the following categories based on its primary subject matter. Choose the category that best represents the core issue of the complaint.
-**Allowed Categories:** [{{allowed_categories}}]
+**Question 2: Complaint Summary**
+Based on your understanding of the complaint, provide a concise, one-sentence summary in English. The key for this answer must be "summary".
+The summary must be neutral, factual, and capture the main point of the complaint.
 
-**Guidance for selection:**
-    {{category_guidance}}
-
-### 2. Sensitivity Level Analysis
-
-**Task:** Assess the sensitivity of the complaint and assign it ONE of the following levels.
-**Allowed Levels:** [{{allowed_sensitivities}}]
-
-**Guidance for selection:**
-*   **High:** Assign this level ONLY if the complaint involves serious allegations such as: sexual harassment, corruption, direct threats to physical safety, illegal activities, severe discrimination, or major data/privacy breaches.
-*   **Medium:** Assign this level for issues that are serious but not critical, such as: repeated service failures affecting work, significant financial loss for the user, systemic problems affecting multiple people, or accusations of professional misconduct.
-*   **Low:** Assign this level for most standard issues, such as: a single service delay, a minor billing error, a single rude interaction, or general operational inefficiencies.
-
-### 3. Content Assessment
-
-**Task:** Assess the nature of the content itself. You must assign ONE of the following assessments.
-**Allowed Assessments:** ["VALID", "SPAM", "ABUSIVE"]
+**Question 3: Sensitivity Level**
+Based on your understanding of the complaint, you must assess its sensitivity level. The key for this answer in the JSON output must be "sensitivity".
+You must choose ONLY ONE of the allowed levels specified here: [{{allowed_sensitivities}}].
 
 **Guidance for selection:**
-*   **VALID:** The text appears to be a genuine complaint or grievance, written in a coherent manner.
-*   **SPAM:** The text is nonsensical, irrelevant, contains only advertising, is a random sequence of characters, or is clearly a test message.
-*   **ABUSIVE:** The text contains hate speech, profanity, personal insults, or overly aggressive/threatening language that is not constructive to resolving the issue.
+*   You must assign the "sensitive" level if the complaint's content is related to any of the topics based on this list of keywords: [{{critical_keywords}}].
+*   In all other cases, you must assign the "insensitive" level.
 
-### 4. English Summary
+**Question 4: Content Assessment**
+Assess the nature of the content itself. The key for this answer must be "content_assessment".
+You must choose ONE of the following assessments: ["VALID", "SPAM", "ABUSIVE"].
 
-**Task:** Provide a concise, one-sentence summary of the complaint in English. The summary must be neutral, factual, and capture the main point of the complaint.
+Guidance for selection:
+*   "VALID": The text appears to be a genuine complaint or grievance, written in a coherent manner.
+*   "SPAM": The text is nonsensical, irrelevant, contains only advertising, is a random sequence of characters, or is clearly a test message.
+*   "ABUSIVE": The text contains hate speech, profanity, personal insults, or overly aggressive/threatening language that is not constructive to resolving the issue.
+
+**Question 5: Complaint Category**
+Classify the complaint into ONE of the following categories based on its primary subject matter. The key for this answer must be "complaint_category".
+Allowed Categories: [{{allowed_categories}}].
+
+Guidance for selection:
+{{category_guidance}}
 
 ---
-
-Final Output Requirement:
+**Final Output Requirement:**
 You MUST reply ONLY with a single, valid JSON object. Do not add any text, explanation, or markdown before or after the JSON object.
-The JSON object must contain these five keys: "complaint_category", "sensitivity", "content_assessment", "summary", and "is_critical".
-The "is_critical" key must be a boolean value (true or false), and it must be set to true ONLY if the "sensitivity" level is assessed as "High".
+The JSON object must contain these five keys, and only these five keys: "is_critical", "summary", "sensitivity", "content_assessment", and "complaint_category".
