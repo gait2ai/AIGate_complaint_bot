@@ -318,7 +318,7 @@ async def initialize_prompt_builder(config: AppConfig) -> PromptBuilder:
         logging.info("PromptBuilder initialized successfully with new three-template structure and critical complaint config")
         logging.info(f"Template configuration: {list(template_files.keys())}")
         logging.info(f"Analysis settings loaded: {len(analysis_settings.complaint_categories)} categories, {len(analysis_settings.sensitivity_levels)} sensitivity levels")
-        logging.info(f"Critical complaint config loaded with {len(config.critical_complaint_config.keyword_triggers)} keyword triggers")
+        logging.info(f"Critical complaint config loaded with {len(config.critical_complaint_config.keywords)} keywords")
         
         return prompt_builder
         
