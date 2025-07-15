@@ -11,8 +11,8 @@ Your final output must be ONLY a single, valid JSON object containing the answer
 
 **Question 1: Criticality Assessment**
 Based on your understanding of the complaint, you must determine if this complaint is critical. The key for this answer in the JSON output must be "is_critical". The value must be a boolean (`true` or `false`).
-Set the value to `true` ONLY if the complaint's content is related to any of the following topics, which are based on this list of keywords: [{{critical_keywords}}].
-In all other cases, set the value to `false`.
+Set the value to `false` ONLY if the complaint's content is related to any of the following topics, which are based on this list of keywords: [{{critical_keywords}}].
+In all other cases, set the value to `true`.
 
 **Question 2: Complaint Summary**
 Based on your understanding of the complaint, provide a concise, one-sentence summary in English. The key for this answer must be "summary".
