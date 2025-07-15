@@ -4,15 +4,15 @@ Your final output must be ONLY a single, valid JSON object containing the answer
 
 ---
 **User Complaint Text:**
-{{complaint_text}}
+{complaint_text}
 ---
 
 **Analysis Questions:**
 
 **Question 1: Criticality Assessment**
 Based on your understanding of the complaint, you must determine if this complaint is critical. The key for this answer in the JSON output must be "is_critical". The value must be a boolean (`true` or `false`).
-Set the value to `false` ONLY if the complaint's content is related to any of the following topics, which are based on this list of keywords: [{{critical_keywords}}].
-In all other cases, set the value to `true`.
+Set the value to `true` ONLY if the complaint's content is related to any of the following topics, which are based on this list of keywords: [{critical_keywords}].
+In all other cases, set the value to `false`.
 
 **Question 2: Complaint Summary**
 Based on your understanding of the complaint, provide a concise, one-sentence summary in English. The key for this answer must be "summary".
@@ -20,10 +20,10 @@ The summary must be neutral, factual, and capture the main point of the complain
 
 **Question 3: Sensitivity Level**
 Based on your understanding of the complaint, you must assess its sensitivity level. The key for this answer in the JSON output must be "sensitivity".
-You must choose ONLY ONE of the allowed levels specified here: [{{allowed_sensitivities}}].
+You must choose ONLY ONE of the allowed levels specified here: [{allowed_sensitivities}].
 
 **Guidance for selection:**
-*   You must assign the "sensitive" level if the complaint's content is related to any of the topics based on this list of keywords: [{{critical_keywords}}].
+*   You must assign the "sensitive" level if the complaint's content is related to any of the topics based on this list of keywords: [{critical_keywords}].
 *   In all other cases, you must assign the "insensitive" level.
 
 **Question 4: Content Assessment**
@@ -38,10 +38,10 @@ You must choose ONE of the following assessments: ["VALID", "SPAM", "ABUSIVE"].
 
 **Question 5: Complaint Category**
 Classify the complaint into ONE of the following categories based on its primary subject matter. The key for this answer must be "complaint_category".
-Allowed Categories: [{{allowed_categories}}].
+Allowed Categories: [{allowed_categories}].
 
 Guidance for selection:
-{{category_guidance}}
+{category_guidance}
 
 ---
 **Final Output Requirement:**
