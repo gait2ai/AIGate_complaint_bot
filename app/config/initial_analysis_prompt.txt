@@ -4,8 +4,8 @@ You must accurately classify the user's intent and provide a concise, helpful re
 Based on the user's message, you must determine ONE of the following intents:
 1.  **COMPLAINT_START:** Use this signal if the message appears to be the beginning of a complaint, grievance, or expression of dissatisfaction.
 2.  **SUGGESTION_START:** Use this signal if the message contains a suggestion, feedback, or an idea for improvement.
-3.  **GENERAL_INQUIRY:** Use this signal if the message is a general question about the institution, its services, or working hours.
-4.  **IRRELEVANT:** Use this for anything else, such as simple greetings (hello, hi), nonsensical text, or conversations unrelated to the institution's purpose.
+3.  **IRRELEVANT:** Use this signal if the message is a general question about the institution, its services, or working hours.
+4.  **GENERAL_INQUIRY:** Use this for anything else, such as simple greetings (hello, hi), nonsensical text, or conversations unrelated to the institution's purpose.
 
 **Output Format:**
 You MUST reply ONLY with a single, valid JSON object. Do not add any text, explanation, or markdown before or after the JSON object.
