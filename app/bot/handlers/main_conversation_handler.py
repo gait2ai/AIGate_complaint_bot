@@ -265,7 +265,7 @@ async def handle_initial_text_message(
             from app.bot.handlers.suggestion_feedback_handlers import prompt_enter_suggestion_text
             return await prompt_enter_suggestion_text(update, context)
 
-        elif signal == "GENERAL_INQUIRY":
+        elif signal == "IRRELEVANT":
             # Handle greetings and general questions
             await update.message.reply_text(response_text)
             # Display main action buttons to guide the user
@@ -276,7 +276,7 @@ async def handle_initial_text_message(
             clear_conversation_state(context)
             return SELECTING_INITIAL_ACTION
 
-        elif signal == "IRRELEVANT":
+        elif signal == "GENERAL_INQUIRY":
             # Handle nonsensical or unrelated messages
             await update.message.reply_text(response_text)
             # Clean up conversation state since we're ending
