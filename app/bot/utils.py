@@ -165,6 +165,7 @@ DEFAULT_MESSAGES: Dict[str, Dict[str, str]] = {
         'error_submission_failed': "❌ فشل إرسال الشكوى. يرجى المحاولة مرة أخرى.",
         'error_submission_failed_critical': "❌ فشل إرسال الشكوى العاجلة. يرجى الاتصال بنا مباشرة.",
         'error_generic_unexpected': "حدث خطأ غير متوقع",
+        'general_inquiry_follow_up': "لمزيد من الاستفسارات، يمكنك التواصل مع **{institution_name}** مباشرة عبر:\n📞 الهاتف: `{phone}`\n📧 البريد الإلكتروني: `{email}`",
         
         # Help and information messages
         'help_main': "📖 مساعدة بوت {institution_name}\n\nيمكنك استخدام هذا البوت لـ:\n• تقديم الشكاوى\n• متابعة حالة الشكاوى\n• الاستفسارات العامة\n\nللمساعدة اتصل: {contact_info}",
@@ -390,6 +391,7 @@ DEFAULT_MESSAGES: Dict[str, Dict[str, str]] = {
         'error_submission_failed': "❌ Failed to submit complaint. Please try again.",
         'error_submission_failed_critical': "❌ Failed to submit critical complaint. Please contact us directly.",
         'error_generic_unexpected': "An unexpected error occurred",
+        'general_inquiry_follow_up': "For further inquiries, you can contact **{institution_name}** directly via:\n📞 Phone: `{phone}`\n📧 Email: `{email}`",
         
         # Help and information messages
         'help_main': "📖 {institution_name} Bot Help\n\nYou can use this bot to:\n• Submit complaints\n• Track complaint status\n• General inquiries\n\nFor help contact: {contact_info}",
