@@ -18,7 +18,7 @@ application_settings:
     sex: true
     phone: true
     email: false
-    department: false
+    department: true
     position: false
     complaint_type: false
     residence_status: true
