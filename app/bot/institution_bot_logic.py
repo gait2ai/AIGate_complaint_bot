@@ -699,7 +699,7 @@ class InstitutionBot:
                     is_critical, status, source_channel,
                     -- Timestamps
                     submitted_at, created_at, updated_at
-                   ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                   ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                 (
                     beneficiary_id,
                     "TBD",  # Placeholder, will be updated later
