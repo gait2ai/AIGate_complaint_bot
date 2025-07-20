@@ -321,7 +321,7 @@ class InstitutionBot:
         """
         try:
             # Generate validation prompt (synchronous call)
-            prompt = self.prompt_builder.generate_input_validation_prompt(question_asked, user_answer)
+            prompt = await self.prompt_builder.generate_input_validation_prompt(question_asked, user_answer)
             
             # Get AI response
             response = await self.ai_handler.generate_response(user_message="", system_prompt=prompt)
