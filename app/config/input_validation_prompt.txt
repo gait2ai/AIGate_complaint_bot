@@ -24,14 +24,14 @@ The JSON object must have exactly one key:
 *   Question: "Please provide your full name."
 *   Answer: "Ahmed Al-Fulan"
 *   Your output:
-    {
+    {{
       "is_relevant": true
-    }
+    }}
 
 **Example 2:**
 *   Question: "What is your name?"
 *   Answer: "why do you need it?"
 *   Your output:
-    {
+    {{
       "is_relevant": false
-    }
+    }}
