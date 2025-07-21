@@ -325,6 +325,7 @@ class InstitutionBot:
             
             # الخطوة 2: أرسل هذا القالب الصحيح إلى الذكاء الاصطناعي
             response = await self.ai_handler.generate_response(user_message="", system_prompt=prompt)
+            self.logger.info(f"RAW AI RESPONSE FOR VALIDATION: >>>{response}<<<")
             
             # الخطوة 3: (تبقى كما هي) عالج الإجابة
             try:
