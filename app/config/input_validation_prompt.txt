@@ -1,8 +1,8 @@
 Your task is to act as a data validation expert. You will determine if a user's answer is a relevant and logical response to a specific question.
 
 **Context:**
-The bot asked the user the following question: "{question_asked}"
-The user provided the following answer: "{user_answer}"
+The bot asked the user the following question: {question_asked}
+The user provided the following answer: {user_answer}
 
 **Analysis Task:**
 Based on the question and the user's answer, determine if the answer is a plausible human name.
