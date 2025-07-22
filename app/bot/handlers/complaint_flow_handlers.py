@@ -1355,7 +1355,7 @@ async def handle_critical_submission_confirmation(update: Update, context: Conte
                 text=confirmation_msg
             )
             follow_up_message = get_message('general_inquiry_follow_up', bot_instance, is_arabic)
-            await context.bot.send_message(chat_id=query.effective_chat.id, text=follow_up_message, parse_mode='Markdown'
+            await context.bot.send_message(chat_id=query.message.chat_id, text=follow_up_message, parse_mode='Markdown'
             )
 
             # Clean up
