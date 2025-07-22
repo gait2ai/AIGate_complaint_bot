@@ -1334,9 +1334,8 @@ async def handle_critical_submission_confirmation(update: Update, context: Conte
 
             # Send critical notifications
             if hasattr(bot_instance, 'email_service'):
-            	notification_email = bot_instance.config.critical_complaint_config.notification_email
-                await bot_instance.email_service.send_critical_complaint_email(
-        data=complaint_data,
+                notification_email = bot_instance.config.critical_complaint_config.notification_email
+                await bot_instance.email_service.send_critical_complaint_email(data=complaint_data,
         notification_email=notification_email,
         analysis_results=analysis_result
     )
