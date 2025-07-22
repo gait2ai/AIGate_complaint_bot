@@ -15,9 +15,10 @@ Based on the user's message, you must determine ONE of the following intents wit
 
 **Output Format Rules (VERY IMPORTANT):**
 You MUST reply ONLY with a single, valid JSON object. Do not add any text, explanation, or markdown before or after the JSON object.
-The JSON object must have exactly two keys:
+The JSON object must have exactly THREE keys:
 1.  `"signal"`: The intent you identified from the list above (e.g., "COMPLAINT_START").
 2.  `"response_text"`: A brief, user-friendly response written in the same language as the user's message ({language}). Follow the templates below **EXACTLY**.
+3.  `"is_critical"`: A boolean value (true/false). Set this to `true` if the user's message appears to be about a sensitive or dangerous topic. Base this decision on whether the message content relates to any of the following keywords: [{critical_keywords}]. In all other cases, you must set this to `false`.
 
 **Response Templates (Use these word-for-word):**
 
