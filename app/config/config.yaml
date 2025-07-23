@@ -160,10 +160,10 @@ ai_models:
     api_key_env_var: "HF_API_TOKEN"
     primary_model_hf: "facebook/bart-large-mnli"
     fallback_models_hf:
-      - "mistralai/Devstral-Small-2507"
-      - "NousResearch/Nous-Hermes-2-Mistral-7B-DPO"
-      - "mistralai/Mistral-7B-Instruct-v0.1"
-      - "google/gemma-7b-it"
+      - "mistralai/Mistral-7B-Instruct-v0.3"
+      - "google/flan-t5-large"
+      - "google-bert/bert-base-uncased"
+      - "deepseek-ai/DeepSeek-R1-0528"
     base_url_hf: "https://api-inference.huggingface.co/models/"
 
 prompts:
