@@ -144,9 +144,9 @@ email_config:
     timeout: 30
 
 ai_models:
-  primary_model: "mistralai/mistral-nemo:free"
+  primary_model: "moonshotai/kimi-k2:free"
   fallback_models:
-    - "google/gemini-2.0-flash-exp:free"
+    - "mistralai/mistral-nemo:free"
     - "deepseek/deepseek-chat-v3-0324:free"
     - "qwen/qwq-32b:free"
     - "google/gemma-2-9b-it:free"
