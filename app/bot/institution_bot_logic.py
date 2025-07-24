@@ -125,7 +125,7 @@ class InstitutionBot:
         try:
         	license_key = self.config.application_meta.license_key
             if not license_key:
-            	self.logger.error("Integrity Check Failed: license_key is missing from config.")
+                self.logger.error("Integrity Check Failed: license_key is missing from config.")
                 return False
             decoded_bytes = base64.b64decode(license_key)
             decoded_str = decoded_bytes.decode('utf-8')
