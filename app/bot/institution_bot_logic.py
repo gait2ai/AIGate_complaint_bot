@@ -123,7 +123,7 @@ class InstitutionBot:
         """
         import base64
         try:
-        	license_key = self.config.application_meta.license_key
+            license_key = self.config.application_meta.license_key
             if not license_key:
                 self.logger.error("Integrity Check Failed: license_key is missing from config.")
                 return False
@@ -131,22 +131,22 @@ class InstitutionBot:
             decoded_str = decoded_bytes.decode('utf-8')
             author_data = json.loads(decoded_str)
             if 'author' in author_data and 'contact' in author_data:
-            	self.author_info = author_data
+                self.author_info = author_data
                 return True
             else:
-            	self.logger.error("Integrity Check Failed: Decoded license key is missing required fields ('author', 'contact').")
+                self.logger.error("Integrity Check Failed: Decoded license key is missing required fields ('author', 'contact').")
                 return False
         except (AttributeError, KeyError):
-        	self.logger.error("Integrity Check Failed: 'application_meta' or 'license_key' not found in the configuration.")
+            self.logger.error("Integrity Check Failed: 'application_meta' or 'license_key' not found in the configuration.")
             return False
         except (base64.binascii.Error, UnicodeDecodeError):
-        	self.logger.error("Integrity Check Failed: license_key is not a valid base64 encoded string.")
+            self.logger.error("Integrity Check Failed: license_key is not a valid base64 encoded string.")
             return False
         except json.JSONDecodeError:
-        	self.logger.error("Integrity Check Failed: Decoded license key is not valid JSON.")
+            self.logger.error("Integrity Check Failed: Decoded license key is not valid JSON.")
             return False
         except Exception as e:
-        	self.logger.error(f"An unexpected error occurred during integrity check: {e}")
+            self.logger.error(f"An unexpected error occurred during integrity check: {e}")
             return False
     
     async def setup_application(self) -> Application:
