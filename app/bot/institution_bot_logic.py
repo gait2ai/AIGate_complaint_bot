@@ -104,7 +104,7 @@ class InstitutionBot:
         
         self.author_info = None
         if not self._verify_integrity_and_load_author_info():
-        	self.logger.critical("CRITICAL: Application integrity check failed. "
+            self.logger.critical("CRITICAL: Application integrity check failed. "
             "The license key is missing, invalid, or has been tampered with. Shutting down."
             )
             raise SystemExit("Integrity Check Failed: Application license is invalid.")
