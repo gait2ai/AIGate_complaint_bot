@@ -170,7 +170,7 @@ class InstitutionBot:
             
             self.logger.info("Verifying application license against Bot ID...")
             try:
-            	authorized_bot_id = self.author_info.get("authorized_bot_id")
+                authorized_bot_id = self.author_info.get("authorized_bot_id")
                 if not authorized_bot_id:
                     self.logger.critical("FATAL: License key is valid but does not contain an authorized_bot_id.")
                     raise SystemExit("License Integrity Error: Missing Bot ID in license.")
