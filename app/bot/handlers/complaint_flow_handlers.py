@@ -1117,7 +1117,7 @@ async def handle_submission_confirmation(update: Update, context: ContextTypes.D
             )
             
             if analysis_result.get('is_critical', False):
-            	logger.info(f"Complaint {complaint_id} was flagged as critical during final analysis. Sending follow-up contact info.")
+                logger.info(f"Complaint {complaint_id} was flagged as critical during final analysis. Sending follow-up contact info.")
                 follow_up_message = get_message('general_inquiry_follow_up',
         bot_instance,
         is_arabic
