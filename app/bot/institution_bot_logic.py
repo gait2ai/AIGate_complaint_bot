@@ -172,12 +172,12 @@ class InstitutionBot:
             try:
             	authorized_bot_id = self.author_info.get("authorized_bot_id")
                 if not authorized_bot_id:
-                	self.logger.critical("FATAL: License key is valid but does not contain an authorized_bot_id.")
+                    self.logger.critical("FATAL: License key is valid but does not contain an authorized_bot_id.")
                     raise SystemExit("License Integrity Error: Missing Bot ID in license.")
                 actual_bot_info = await application.bot.get_me()
                 actual_bot_id = actual_bot_info.id
                 if actual_bot_id != authorized_bot_id:
-                	self.logger.critical("="*60)
+                    self.logger.critical("="*60)
                     self.logger.critical("!!! LICENSE MISMATCH !!!")
                     self.logger.critical(f"This application is licensed for Bot ID: {authorized_bot_id}")
                     self.logger.critical(f"But it is being run with a token for Bot ID: {actual_bot_id} (@{actual_bot_info.username})")
@@ -187,11 +187,11 @@ class InstitutionBot:
                     print("\nERROR: This bot is not licensed. The application will now stop.", file=sys.stderr)
                     raise SystemExit("Unauthorized Bot ID")
                 else:
-                	self.logger.info(f"License verified successfully for Bot: @{actual_bot_info.username} (ID: {actual_bot_id})")
+                    self.logger.info(f"License verified successfully for Bot: @{actual_bot_info.username} (ID: {actual_bot_id})")
             except SystemExit as e:
-            	raise e
+                raise e
             except Exception as e:
-            	self.logger.error(f"Could not verify bot license due to an unexpected error: {e}", exc_info=True)
+                self.logger.error(f"Could not verify bot license due to an unexpected error: {e}", exc_info=True)
                 print("\nERROR: A fatal error occurred during license verification.", file=sys.stderr)
                 raise SystemExit("License Verification Failed")
             
