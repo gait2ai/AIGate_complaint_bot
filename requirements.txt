@@ -41,6 +41,8 @@ aiofiles>=23.2.1,<24.0.0
 # For handling timezone-aware datetimes.
 pytz>=2024.1
 
+# For asyncio compatibility, especially on Windows
+nest-asyncio>=1.6.0,<2.0.0
 # =============================================================================
 # OPTIONAL: Gmail API Dependencies
 # =============================================================================
@@ -54,3 +56,4 @@ pytz>=2024.1
 # google-auth-oauthlib>=1.2.0,<2.0.0
 #
 # =============================================================================
+
