@@ -34,6 +34,8 @@ License: Proprietary
 import os
 import sys
 import asyncio
+import nest_asyncio
+nest_asyncio.apply()
 import logging
 import signal
 from pathlib import Path
